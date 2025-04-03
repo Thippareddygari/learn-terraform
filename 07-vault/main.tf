@@ -10,10 +10,10 @@ data "vault_kv_secret" "secret_data" {
   path = "test/data/demo"
 }
 
-resource "local_file" "test" {
-  filename = "/tmp/1"
-  content = data.vault_kv_secret.secret_data
-}
+# resource "local_file" "test" {
+#   filename = "/tmp/1"
+#   content = data.vault_kv_secret.secret_data
+# }
 
 # output "name" {
 #   value = data.vault_kv_secret.secret_data["username"]
