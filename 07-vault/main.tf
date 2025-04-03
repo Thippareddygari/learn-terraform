@@ -16,6 +16,6 @@ resource "local_file" "test" {
 }
 
 output "name" {
-  value = data.vault_kv_secret.secret_data
+  value = data.vault_kv_secret.secret_data["username"]
   sensitive = true
 }
