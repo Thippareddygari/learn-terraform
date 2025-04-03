@@ -15,10 +15,10 @@ resource "local_file" "test" {
   content = data.vault_kv_secret.secret_data
 }
 
-output "name" {
-  value = data.vault_kv_secret.secret_data["username"]
-  sensitive = true
-}
+# output "name" {
+#   value = data.vault_kv_secret.secret_data["username"]
+#   sensitive = true
+# }
 
 data "vault_generic_secret" "test1" {
   path = "test/demo"
