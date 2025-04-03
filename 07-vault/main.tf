@@ -16,8 +16,8 @@ data "vault_kv_secret" "secret_data" {
 # }
 
 output "name" {
-  value = data.vault_generic_secret.test1.data["username"]
-  sensitive = true
+  value = nonsensitive(data.vault_generic_secret.test1.data["username"])
+  //sensitive = true
 }
 
 data "vault_generic_secret" "test1" {
