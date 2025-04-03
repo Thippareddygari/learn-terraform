@@ -25,6 +25,6 @@ data "vault_generic_secret" "test1" {
 }
 
 resource "local_file" "loal" {
-  filename = "tmp/2"
+  filename = "tmp/2.txt"
   content = data.vault_generic_secret.test1.data["username"]
 }
