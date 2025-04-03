@@ -24,7 +24,7 @@ data "vault_generic_secret" "test1" {
   path = "test/demo"
 }
 
-resource "local_file" "local" {
+resource "local_file" "loal" {
   filename = "tmp/2"
   content = data.vault_generic_secret.test1.data["username"]
 }
