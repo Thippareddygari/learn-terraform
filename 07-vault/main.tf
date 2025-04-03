@@ -19,3 +19,12 @@ output "name" {
   value = data.vault_kv_secret.secret_data["username"]
   sensitive = true
 }
+
+data "vault_generic_secret" "test1" {
+  path = "test/demo"
+}
+
+resource "local_file" "local" {
+  filename = "tmp/1"
+  content = data.vault_generic_secret.test1.data["username"]
+}
